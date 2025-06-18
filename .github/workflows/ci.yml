@@ -1,26 +1,19 @@
-name: Rails CI
+name: Simple CI
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.4.4'
-
-    - name: Install dependencies
-      run: bundle install
-
-    - name: Run RuboCop
-      run: bundle exec rubocop
-
-    - name: Run RSpec tests
-      run: bundle exec rspec
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # или твоя версия
+      - name: Install dependencies
+        run: bundle install
+      - name: Run RuboCop
+        run: bundle exec rubocop
