@@ -12,7 +12,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # или твоя версия
+          ruby-version: '3.4.4'
       - name: Install dependencies
         run: bundle install
       - name: Run RuboCop
