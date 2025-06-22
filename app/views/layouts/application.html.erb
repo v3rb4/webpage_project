@@ -23,5 +23,9 @@
 
   <body>
     <%= yield %>
+    <nav>
+      <%= link_to 'Home', root_path %> |
+      <%= link_to 'Contacts', contacts_path %>
+</nav>
   </body>
 </html>
