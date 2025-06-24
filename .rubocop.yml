@@ -12,8 +12,8 @@ AllCops:
 
 Layout/LineLength:
   Max: 160
-  IgnoredPatterns:
-    - 'http:\/\/'
+  # IgnoredPatterns:
+  #  - 'http:\/\/'
   AllowHeredoc: true
   AllowURI: true
 
