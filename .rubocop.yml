@@ -11,6 +11,7 @@ AllCops:
     - 'vendor/**/*'
 
 Layout/LineLength:
+  Enabled: true
   Max: 160
   # IgnoredPatterns:
   #  - 'http:\/\/'
