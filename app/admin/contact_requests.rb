@@ -1,18 +1,22 @@
 ActiveAdmin.register ContactRequest do
+  permit_params :name, :email, :message, :resolved
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :name, :email, :message, :resolved
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name, :email, :message, :resolved]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :email
+    column :resolved
+    actions
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :email
+      f.input :message
+      f.input :resolved
+    end
+    f.actions
+  end
 end
