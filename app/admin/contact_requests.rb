@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register ContactRequest do
   permit_params :name, :email, :message, :resolved
 
