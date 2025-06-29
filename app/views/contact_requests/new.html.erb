@@ -1,2 +1,22 @@
-<h1>ContactRequests#new</h1>
-<p>Find me in app/views/contact_requests/new.html.erb</p>
+<h1>Contact Us</h1>
+
+<%= form_with model: @contact_request, url: contact_path, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+  </div>
+
+  <div>
+    <%= form.submit 'Send' %>
+  </div>
+<% end %>
