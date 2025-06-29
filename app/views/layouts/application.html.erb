@@ -18,14 +18,14 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
     <%= yield %>
     <nav>
       <%= link_to 'Home', root_path %> |
-      <%= link_to 'Contacts', contacts_path %>
+      <%= link_to 'Contacts', contact_path %>
 </nav>
   </body>
 </html>
