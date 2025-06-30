@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContactRequestsController < ApplicationController
   def new
     @contact_request = ContactRequest.new
