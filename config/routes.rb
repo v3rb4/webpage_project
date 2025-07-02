@@ -1,11 +1,21 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "contacts/new"
+  get "contacts/create"
+  get "services/index"
+  get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   # Public routes
   root 'pages#show', slug: 'home'
+
+  root 'home#index'
+
+  resources :services, only: [:index]
+  resources :posts, only: [:index]
+  resources :contacts, only: [:new, :create]
 
   get '/services', to: 'pages#show', defaults: { slug: 'services' }
   get '/blog', to: 'posts#index'
