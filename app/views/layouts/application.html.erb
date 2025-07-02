@@ -17,15 +17,17 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
     <nav>
       <%= link_to 'Home', root_path %> |
-      <%= link_to 'Contacts', contact_path %>
-</nav>
+      <%= link_to 'Services', services_path %> |
+      <%= link_to 'Blog', posts_path %> |
+      <%= link_to 'Contact', new_contact_path %>
+    </nav>
+
+    <%= yield %>
   </body>
 </html>
